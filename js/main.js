@@ -20,24 +20,5 @@ $('#play button').on('click', function(event){
 
 // -----------------------------------
 // create high scores
-var highscores = {
-	{
-		name: "Obi Wan",
-	 	time: 50 
-	},
-	{
-		name: "Master Yoda",
-		time: 62
-	},
-	{	name: "Chewbacca",
-		time: 49
-	},
-	{
-		name: "Han Solo",
-		time: 121
-	},
-	{
-		name: "R2 D2",
-		time: 108
-	}
-}
+
+

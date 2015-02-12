@@ -14,7 +14,10 @@ var score = 0,
 // Update Score
 var gameUpdateScore = function (){
 	score++
-	console.log("Current Score: "+score);
+	// Update html #score element
+	$('#score').text("Score: "+score);
+
+	// console.log("Current Score: "+score);
 }
 
 
@@ -36,6 +39,12 @@ var gameTimerUpdate = function() {
 		console.log(gameTime);
 	}
 	, 1000);
+
+	// Update html #time element
+	$("#timer").text("Time: "+gameTime);
+
+
+
 }
 
 
@@ -68,18 +77,23 @@ var gameInit = function(results) {
 	// Loop through each result and create a matching pair of cards
 	for (var i = 0; i < results.length; i++) {
 		// create original card
-		cardDeck[i] = {name : results[i].name, 
+		cardDeck[i] = {
+					   name : results[i].name, 
 					   id : (i+1),
 					   gender : results[i].gender,
-					   birthYear : results[i].birthYear }
+					   birthYear : results[i].birthYear 
+					 }
 
 		// create matching card
-		cardDeck[i+15] = {name : results[i].name, 
-					   id : (i+1),
-					   gender : results[i].gender,
-					   birthYear : results[i].birthYear}
+		cardDeck[i+15] = {
+							name : results[i].name, 
+					   		id : (i+1),
+					   		gender : results[i].gender,
+					   		birthYear : results[i].birthYear
+					   	}
 
 	}
+
 	// Shuffle Deck
 	shuffleDeck(cardDeck);
 
@@ -87,14 +101,12 @@ var gameInit = function(results) {
 	var $htmlObject = '<div class="container">';
 		$htmlObject += '<div class="row">';
 	
-		console.log(cardDeck.length)
-
 	// create cards
 	for (var i = 0; i < 30; i++) {
 		col++ // increment column
 
 		// add card back, with index as ID
-		$htmlObject += '<div class="col-sm-2""><div class="cardBack" id='+i+'>'
+		$htmlObject += '<div class="col-sm-2""><div class="cardBack" id='+i+'>';
 		$htmlObject += '<h1>'+cardDeck[i].name+'</h1>';
 		$htmlObject += '<p>'+cardDeck[i].gender+'</p>';
 		$htmlObject += '<p>'+cardDeck[i].birthYear+'</p>';
@@ -118,6 +130,7 @@ var gameInit = function(results) {
 
 		// append to #game
 		$("#game").append($htmlObject);
+
 
 		// listener for card click to start game engine
 		$(".cardFront").on('click', function(event){
@@ -163,7 +176,7 @@ var gameMain = function(card) {
 				if (score < 15) {
 					// continue game
 					$activeCards = [];
-					gameMain(false);
+					gameMain();
 
 				} else {
 					// score reached
@@ -183,7 +196,7 @@ var gameMain = function(card) {
 				 		{$activeCards[i].show();
 				 	}
 					// next turn
-					gameMain(false);
+					gameMain();
 				}, 1000); 	
 			}
 

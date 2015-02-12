@@ -13,3 +13,19 @@
 #game {
 	display: none;
 }
+
+
+@font-face {
+	font-family:"Starjedi.ttf";
+	src: url("../fonts/Starjedi.ttf")
+}
+
+@font-face {
+	font-family:"Starhol.ttf";
+	src: url("../fonts/Starjhol.ttf")
+}
+
+
+h1 {
+	font-family: Starjedi;
+}

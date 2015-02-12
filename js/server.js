@@ -2,11 +2,15 @@
 var getData = function (page, type) {
 	page = Math.floor((Math.random() * page) + 1)
 
+
 	// ajax request
 	var req = new XMLHttpRequest();
 	req.onload = function(){
-			// parse data
+			// parse data		
 			var data = JSON.parse(this.responseText);
+
+
+			// create our own table and transfer properties we want
 			var results = [];
 
 			// create array to hold data
@@ -17,17 +21,15 @@ var getData = function (page, type) {
 				results[i].gender = data.results[i].gender;
 			}
 			
-
 			// get 5 more star wars characters
 			var req = new XMLHttpRequest();
 			req.onload = function() {
 				// parse data
 				var data = JSON.parse(this.responseText);
-				console.log(data)
+				// console.log(data)
 
 				// add data to results array
 				for (var i = 0; i < 5; i++){
-					
 					results[results.length] = [];
 					results[results.length-1].name = data.results[i].name;
 					results[results.length-1].birthYear = data.results[i].birth_year;
