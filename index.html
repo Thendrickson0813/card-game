@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Card Game</title>
+    <title>Star Wars Card Game</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="http://fonts.googleapis.com/css?family=Architects+Daughter" rel="stylesheet" type='text/css' />
@@ -11,8 +11,6 @@
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" />
     <link rel="stylesheet" type="text/css" href="sass/main.css" />
-    <!-- <link rel="stylesheet" type="text/css" href="css/style.css" /> -->
-    <TITLE>Card Game Menu</TITLE>
 </head>
 
 
@@ -20,542 +18,92 @@
     <!-- ======================================================================= -->
     <!-- menu layer -->
     <!-- ======================================================================= -->
-        <div id="menu">
+    <div id="menu">
         <div class="page-header">
-            <h1><u>Card Game from Hell...</u></h1>
+            <h1>Card Game from Hell...</h1>
         </div>
-        <form>
-            <div class="form-name">
-                <input type="text" class="form-control" placeholder="Name" />
-            </div>
+        <form id="form-name">
+
+            <input type="text" class="form-control" placeholder="Name" />
+
         </form>
         <div id="play">
-            <p><a class="btn btn-primary btn-lg" href="#" role="button">PLAY</a>
+            <button>Play</button>
+            <!-- <a class="btn btn-primary btn-lg" href="#" role="button">PLAY</a> -->
         </div>
-        <div class="container">
+        <div class="container" id="leaderboard">
+            <h3>Top 5 Scores</h3>
             <div class="row">
-                <div class="col-lg-4">
+                <div class="col-sm-4">
                     <h2>Username</h2>
                 </div>
-                <div class="col-lg-8">
+                <div class="col-sm-8">
                     <h2>Score</h2>
                 </div>
             </div>
-        </div>
-        <hr />
-        <div class="container">
+            <!--         <hr />
+ -->
+            <!-- Start of hiScore list -->
+            <!-- <div class="row">
+                <div class="col-sm-6">
+                    <h4>Mike Brash</h4>
+                </div>
+                <div class="col-sm-6">
+                    <h5>100025</h5>
+                </div>
+            </div>
             <div class="row">
-                <div class="col-lg-12">
-                    <h3><u>Top 5 Scores</u></h3>
-                    <ol class="hiScores">
-                        <li>Mike Brash</li>
-                        <li>Tim Hendrickson</li>
-                        <li>Danny Josecite</li>
-                        <li>Derick Warshaw</li>
-                        <li>Mike Laplante</li>
-                    </ol>
+                <div class="col-sm-6">
+                    <h4>Tim Hendrickson</h4>
+                </div>
+                <div class="col-sm-6">
+                    <h5>100025</h5>
                 </div>
             </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <h4>Danny Josecite</h4>
+                </div>
+                <div class="col-sm-6">
+                    <h5>100025</h5>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <h4>Derick Warshaw</h4>
+                </div>
+                <div class="col-sm-6">
+                    <h5>100025</h5>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <h4>Mike Laplante</h4>
+                </div>
+                <div class="col-sm-6">
+                    <h5>100025</h5>
+                </div>
+            </div> -->
         </div>
-        <hr />
-        <footer>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <p>©All rights reserved 2015</p>
-                    </div>
-                </div>
-            </div>
-        </footer>
+
     </div>
 
     <!-- ======================================================================= -->
     <!-- game layer  -->
     <!-- ======================================================================= -->
-<div id="gameLayer">
+    <div id="game">
         <div class="container playBoxContainer">
             <div class="row">
                 
                     <div class="playBox">
                         <p>PLAY</p>
                     </div>
-                
             </div>
         </div>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-2">
-                    <div class="cardBack">
-                        <h1>Name</h1><p>Gender</p><p>Birth Year</p>
-                    </div>
-                    <div class="cardFront">
-                        <h1>Name</h1><p>Gender</p><p>Birth Year</p>
-                    </div>
-                </div>
-                <div class="col-md-2">
-                    <div class="cardBack">
-                        <h1>Name</h1><p>Gender</p><p>Birth Year</p>
-                    </div>
-                    <div class="cardFront">
-                        <h1>Name</h1><p>Gender</p><p>Birth Year</p>
-                    </div>
-                </div>
-                <div class="col-md-2">
-                    <div class="cardBack">
-                        <h1>Name</h1><p>Gender</p><p>Birth Year</p>
-                    </div>
-                    <div class="cardFront">
-                        <h1>Name</h1><p>Gender</p><p>Birth Year</p>
-                    </div>
-                </div>
-                <div class="col-md-2">
-                    <div class="cardBack">
-                        <h1>Name</h1><p>Gender</p><p>Birth Year</p>
-                    </div>
-                    <div class="cardFront">
-                        <h1>Name</h1><p>Gender</p><p>Birth Year</p>
-                    </div>
-                </div>
-                <div class="col-md-2">
-                    <div class="cardBack">
-                        <h1>Name</h1><p>Gender</p><p>Birth Year</p>
-                    </div>
-                    <div class="cardFront">
-                        <h1>Name</h1><p>Gender</p><p>Birth Year</p>
-                    </div>
-                </div>
-                <div class="col-md-2">
-                    <div class="cardBack">
-                        <h1>Name</h1><p>Gender</p><p>Birth Year</p>
-                    </div>
-                    <div class="cardFront">
-                        <h1>Name</h1><p>Gender</p><p>Birth Year</p>
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="row">
-                <div class="col-md-2">
-                    <div class="cardBack">
-                        <h1>Name</h1><p>Gender</p><p>Birth Year</p>
-                    </div>
-                    <div class="cardFront">
-                        <h1>Name</h1><p>Gender</p><p>Birth Year</p>
-                    </div>
-                </div>
-                <div class="col-md-2">
-                    <div class="cardBack">
-                        <h1>Name</h1><p>Gender</p><p>Birth Year</p>
-                    </div>
-                    <div class="cardFront">
-                        <h1>Name</h1><p>Gender</p><p>Birth Year</p>
-                    </div>
-                </div>
-                <div class="col-md-2">
-                    <div class="cardBack">
-                        <h1>Name</h1><p>Gender</p><p>Birth Year</p>
-                    </div>
-                    <div class="cardFront">
-                        <h1>Name</h1><p>Gender</p><p>Birth Year</p>
-                    </div>
-                </div>
-                <div class="col-md-2">
-                    <div class="cardBack">
-                        <h1>Name</h1><p>Gender</p><p>Birth Year</p>
-                    </div>
-                    <div class="cardFront">
-                        <h1>Name</h1><p>Gender</p><p>Birth Year</p>
-                    </div>
-                </div>
-                <div class="col-md-2">
-                    <div class="cardBack">
-                        <h1>Name</h1><p>Gender</p><p>Birth Year</p>
-                    </div>
-                    <div class="cardFront">
-                        <h1>Name</h1><p>Gender</p><p>Birth Year</p>
-                    </div>
-                </div>
-                <div class="col-md-2">
-                    <div class="cardBack">
-                        <h1>Name</h1><p>Gender</p><p>Birth Year</p>
-                    </div>
-                    <div class="cardFront">
-                        <h1>Name</h1><p>Gender</p><p>Birth Year</p>
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="row">
-                <div class="col-md-2">
-                    <div class="cardBack">
-                        <h1>Name</h1><p>Gender</p><p>Birth Year</p>
-                    </div>
-                    <div class="cardFront">
-                        <h1>Name</h1><p>Gender</p><p>Birth Year</p>
-                    </div>
-                </div>
-                <div class="col-md-2">
-                    <div class="cardBack">
-                        <h1>Name</h1><p>Gender</p><p>Birth Year</p>
-                    </div>
-                    <div class="cardFront">
-                        <h1>Name</h1><p>Gender</p><p>Birth Year</p>
-                    </div>
-                </div>
-                <div class="col-md-2">
-                    <div class="cardBack">
-                        <h1>Name</h1><p>Gender</p><p>Birth Year</p>
-                    </div>
-                    <div class="cardFront">
-                        <h1>Name</h1><p>Gender</p><p>Birth Year</p>
-                    </div>
-                </div>
-                <div class="col-md-2">
-                    <div class="cardBack">
-                        <h1>Name</h1><p>Gender</p><p>Birth Year</p>
-                    </div>
-                    <div class="cardFront">
-                        <h1>Name</h1><p>Gender</p><p>Birth Year</p>
-                    </div>
-                </div>
-                <div class="col-md-2">
-                    <div class="cardBack">
-                        <h1>Name</h1><p>Gender</p><p>Birth Year</p>
-                    </div>
-                    <div class="cardFront">
-                        <h1>Name</h1><p>Gender</p><p>Birth Year</p>
-                    </div>
-                </div>
-                <div class="col-md-2">
-                    <div class="cardBack">
-                        <h1>Name</h1><p>Gender</p><p>Birth Year</p>
-                    </div>
-                    <div class="cardFront">
-                        <h1>Name</h1><p>Gender</p><p>Birth Year</p>
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="row">
-                <div class="col-md-2">
-                    <div class="cardBack">
-                        <h1>Name</h1><p>Gender</p><p>Birth Year</p>
-                    </div>
-                    <div class="cardFront">
-                        <h1>Name</h1><p>Gender</p><p>Birth Year</p>
-                    </div>
-                </div>
-                <div class="col-md-2">
-                    <div class="cardBack">
-                        <h1>Name</h1><p>Gender</p><p>Birth Year</p>
-                    </div>
-                    <div class="cardFront">
-                        <h1>Name</h1><p>Gender</p><p>Birth Year</p>
-                    </div>
-                </div>
-                <div class="col-md-2">
-                    <div class="cardBack">
-                        <h1>Name</h1><p>Gender</p><p>Birth Year</p>
-                    </div>
-                    <div class="cardFront">
-                        <h1>Name</h1><p>Gender</p><p>Birth Year</p>
-                    </div>
-                </div>
-                <div class="col-md-2">
-                    <div class="cardBack">
-                        <h1>Name</h1><p>Gender</p><p>Birth Year</p>
-                    </div>
-                    <div class="cardFront">
-                        <h1>Name</h1><p>Gender</p><p>Birth Year</p>
-                    </div>
-                </div>
-                <div class="col-md-2">
-                    <div class="cardBack">
-                        <h1>Name</h1><p>Gender</p><p>Birth Year</p>
-                    </div>
-                    <div class="cardFront">
-                        <h1>Name</h1><p>Gender</p><p>Birth Year</p>
-                    </div>
-                </div>
-                <div class="col-md-2">
-                    <div class="cardBack">
-                        <h1>Name</h1><p>Gender</p><p>Birth Year</p>
-                    </div>
-                    <div class="cardFront">
-                        <h1>Name</h1><p>Gender</p><p>Birth Year</p>
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="row">
-                <div class="col-md-2">
-                    <div class="cardBack">
-                        <h1>Name</h1><p>Gender</p><p>Birth Year</p>
-                    </div>
-                    <div class="cardFront">
-                        <h1>Name</h1><p>Gender</p><p>Birth Year</p>
-                    </div>
-                </div>
-                <div class="col-md-2">
-                    <div class="cardBack">
-                        <h1>Name</h1><p>Gender</p><p>Birth Year</p>
-                    </div>
-                    <div class="cardFront">
-                        <h1>Name</h1><p>Gender</p><p>Birth Year</p>
-                    </div>
-                </div>
-                <div class="col-md-2">
-                    <div class="cardBack">
-                        <h1>Name</h1><p>Gender</p><p>Birth Year</p>
-                    </div>
-                    <div class="cardFront">
-                        <h1>Name</h1><p>Gender</p><p>Birth Year</p>
-                    </div>
-                </div>
-                <div class="col-md-2">
-                    <div class="cardBack">
-                        <h1>Name</h1><p>Gender</p><p>Birth Year</p>
-                    </div>
-                    <div class="cardFront">
-                        <h1>Name</h1><p>Gender</p><p>Birth Year</p>
-                    </div>
-                </div>
-                <div class="col-md-2">
-                    <div class="cardBack">
-                        <h1>Name</h1><p>Gender</p><p>Birth Year</p>
-                    </div>
-                    <div class="cardFront">
-                        <h1>Name</h1><p>Gender</p><p>Birth Year</p>
-                    </div>
-                </div>
-                <div class="col-md-2">
-                    <div class="cardBack">
-                        <h1>Name</h1><p>Gender</p><p>Birth Year</p>
-                    </div>
-                    <div class="cardFront">
-                        <h1>Name</h1><p>Gender</p><p>Birth Year</p>
-                    </div>
-                </div>
-            </div>
-
 
         </div> <!-- container -->
 </div>
-
-
-
-
-    <!-- <div class="boxHolder">
-        <div class="container boxContainer">
-            <div class="row">
-                <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2">
-                    <div class="cardBox"><h1>Name</h1><p>Gender</p><p>Birth Year</p></div>
-                </div>
-                <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2">
-                    <div class="cardBox"><h1>Name</h1><p>Gender</p><p>Birth Year</p></div>
-                </div>
-                <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2">
-                    <div class="cardBox"><h1>Name</h1><p>Gender</p><p>Birth Year</p></div>
-                </div>
-                <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2">
-                    <div class="cardBox"><h1>Name</h1><p>Gender</p><p>Birth Year</p></div>
-                </div>
-                <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2">
-                    <div class="cardBox"><h1>Name</h1><p>Gender</p><p>Birth Year</p></div>
-                </div>
-                <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2">
-                    <div class="cardBox"><h1>Name</h1><p>Gender</p><p>Birth Year</p></div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2">
-                    <div class="cardBox"><h1>Name</h1><p>Gender</p><p>Birth Year</p></div>
-                </div>
-                <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2">
-                    <div class="cardBox"><h1>Name</h1><p>Gender</p><p>Birth Year</p></div>
-                </div>
-                <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2">
-                    <div class="cardBox"><h1>Name</h1><p>Gender</p><p>Birth Year</p></div>
-                </div>
-                <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2">
-                    <div class="cardBox"><h1>Name</h1><p>Gender</p><p>Birth Year</p></div>
-                </div>
-                <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2">
-                    <div class="cardBox"><h1>Name</h1><p>Gender</p><p>Birth Year</p></div>
-                </div>
-                <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2">
-                    <div class="cardBox"><h1>Name</h1><p>Gender</p><p>Birth Year</p></div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2">
-                    <div class="cardBox"><h1>Name</h1><p>Gender</p><p>Birth Year</p></div>
-                </div>
-                <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2">
-                    <div class="cardBox"><h1>Name</h1><p>Gender</p><p>Birth Year</p></div>
-                </div>
-                <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2">
-                    <div class="cardBox"><h1>Name</h1><p>Gender</p><p>Birth Year</p></div>
-                </div>
-                <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2">
-                    <div class="cardBox"><h1>Name</h1><p>Gender</p><p>Birth Year</p></div>
-                </div>
-                <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2">
-                    <div class="cardBox"><h1>Name</h1><p>Gender</p><p>Birth Year</p></div>
-                </div><div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2">
-                    <div class="cardBox"><h1>Name</h1><p>Gender</p><p>Birth Year</p></div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2">
-                    <div class="cardBox"><h1>Name</h1><p>Gender</p><p>Birth Year</p></div>
-                </div>
-                <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2">
-                    <div class="cardBox"><h1>Name</h1><p>Gender</p><p>Birth Year</p></div>
-                </div>
-                <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2">
-                    <div class="cardBox"><h1>Name</h1><p>Gender</p><p>Birth Year</p></div>
-                </div>
-                <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2">
-                    <div class="cardBox"><h1>Name</h1><p>Gender</p><p>Birth Year</p></div>
-                </div>
-                <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2">
-                    <div class="cardBox"><h1>Name</h1><p>Gender</p><p>Birth Year</p></div>
-                </div>
-                <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2">
-                    <div class="cardBox"><h1>Name</h1><p>Gender</p><p>Birth Year</p></div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2">
-                    <div class="cardBox"><h1>Name</h1><p>Gender</p><p>Birth Year</p></div>
-                </div>
-                <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2">
-                    <div class="cardBox"><h1>Name</h1><p>Gender</p><p>Birth Year</p></div>
-                </div>
-                <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2">
-                    <div class="cardBox"><h1>Name</h1><p>Gender</p><p>Birth Year</p></div>
-                </div>
-                <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2">
-                    <div class="cardBox"><h1>Name</h1><p>Gender</p><p>Birth Year</p></div>
-                </div>
-                <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2">
-                    <div class="cardBox"><h1>Name</h1><p>Gender</p><p>Birth Year</p></div>
-                </div>
-                <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2">
-                    <div class="cardBox"><h1>Name</h1><p>Gender</p><p>Birth Year</p></div>
-                </div>
-            </div>
-        </div>
-END BOX CONTAINER
-        <div class="container boxContainerLayer">
-            <div class="row">
-                <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2">
-                    <div class="cardBox"><h1>Name</h1><p>Gender</p><p>Birth Year</p></div>
-                </div>
-                <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2">
-                    <div class="cardBox"><h1>Name</h1><p>Gender</p><p>Birth Year</p></div>
-                </div>
-                <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2">
-                    <div class="cardBox"><h1>Name</h1><p>Gender</p><p>Birth Year</p></div>
-                </div>
-                <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2">
-                    <div class="cardBox"><h1>Name</h1><p>Gender</p><p>Birth Year</p></div>
-                </div>
-                <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2">
-                    <div class="cardBox"><h1>Name</h1><p>Gender</p><p>Birth Year</p></div>
-                </div>
-                <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2">
-                    <div class="cardBox"><h1>Name</h1><p>Gender</p><p>Birth Year</p></div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2">
-                    <div class="cardBox"><h1>Name</h1><p>Gender</p><p>Birth Year</p></div>
-                </div>
-                <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2">
-                    <div class="cardBox"><h1>Name</h1><p>Gender</p><p>Birth Year</p></div>
-                </div>
-                <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2">
-                    <div class="cardBox"><h1>Name</h1><p>Gender</p><p>Birth Year</p></div>
-                </div>
-                <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2">
-                    <div class="cardBox"><h1>Name</h1><p>Gender</p><p>Birth Year</p></div>
-                </div>
-                <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2">
-                    <div class="cardBox"><h1>Name</h1><p>Gender</p><p>Birth Year</p></div>
-                </div>
-                <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2">
-                    <div class="cardBox"><h1>Name</h1><p>Gender</p><p>Birth Year</p></div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2">
-                    <div class="cardBox"><h1>Name</h1><p>Gender</p><p>Birth Year</p></div>
-                </div>
-                <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2">
-                    <div class="cardBox"><h1>Name</h1><p>Gender</p><p>Birth Year</p></div>
-                </div>
-                <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2">
-                    <div class="cardBox"><h1>Name</h1><p>Gender</p><p>Birth Year</p></div>
-                </div>
-                <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2">
-                    <div class="cardBox"><h1>Name</h1><p>Gender</p><p>Birth Year</p></div>
-                </div>
-                <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2">
-                    <div class="cardBox"><h1>Name</h1><p>Gender</p><p>Birth Year</p></div>
-                </div><div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2">
-                    <div class="cardBox"><h1>Name</h1><p>Gender</p><p>Birth Year</p></div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2">
-                    <div class="cardBox"><h1>Name</h1><p>Gender</p><p>Birth Year</p></div>
-                </div>
-                <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2">
-                    <div class="cardBox"><h1>Name</h1><p>Gender</p><p>Birth Year</p></div>
-                </div>
-                <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2">
-                    <div class="cardBox"><h1>Name</h1><p>Gender</p><p>Birth Year</p></div>
-                </div>
-                <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2">
-                    <div class="cardBox"><h1>Name</h1><p>Gender</p><p>Birth Year</p></div>
-                </div>
-                <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2">
-                    <div class="cardBox"><h1>Name</h1><p>Gender</p><p>Birth Year</p></div>
-                </div>
-                <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2">
-                    <div class="cardBox"><h1>Name</h1><p>Gender</p><p>Birth Year</p></div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2">
-                    <div class="cardBox"><h1>Name</h1><p>Gender</p><p>Birth Year</p></div>
-                </div>
-                <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2">
-                    <div class="cardBox"><h1>Name</h1><p>Gender</p><p>Birth Year</p></div>
-                </div>
-                <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2">
-                    <div class="cardBox"><h1>Name</h1><p>Gender</p><p>Birth Year</p></div>
-                </div>
-                <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2">
-                    <div class="cardBox"><h1>Name</h1><p>Gender</p><p>Birth Year</p></div>
-                </div>
-                <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2">
-                    <div class="cardBox"><h1>Name</h1><p>Gender</p><p>Birth Year</p></div>
-                </div>
-                <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2">
-                    <div class="cardBox"><h1>Name</h1><p>Gender</p><p>Birth Year</p></div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-   -->    <!-- end of gameLayer -->
+    <!-- end of gameLayer -->
 
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
@@ -564,5 +112,5 @@ END BOX CONTAINER
     <script src="js/gameEngine.js"></script>
     <script src="js/main.js"></script>
 </body>
-</html>
 
+</html>

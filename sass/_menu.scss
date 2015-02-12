@@ -1,24 +1,69 @@
+#menu {
+	background-color: grey;
+}
+#form-name {
+	padding: 20px 0;
+
+	margin: auto;
+	width: 250px;
+	input {
+		height: 60px;
+		border: none;
+		background: none;
+		box-shadow: none;
+		border-radius: 0;
+		border-bottom: 4px solid black;
+		font-size: 2em;
+		text-align: center;
+	}
+}
+#play {
+	padding: 20px 0;
+	button {
+		display: block;
+		margin: auto;
+		font-size: 2em;
+		padding: 10px 50px;
+		border: none;
+	}
+}
+#leaderboard {
+	margin-top: 20px;
+	background: lightblue;
+	margin-bottom: 10px; 
+	padding: 10px 0;
+	h3 {
+		padding: 20px 0;
+		font-size: 1.75em;
+		text-decoration: underline;
+	}
+	h2 {
+/*		border: thin solid black;*/
+		margin: auto;
+		font-size: 1.5em;
+		text-decoration: underline;
+		padding-bottom: 10px;
+	}
+	h4 {
+		margin-left: 125px;
+		padding: 5px 0;
+		text-align: left;
+		font-size: 1.375em;
+	}
+	h5 {
+		text-align: right;
+		margin-right:337px;
+		font-size: 1.375;
+	}
+}
 body {
-	background-image: url('../img/grimReaper.jpg'); 
-	background-repeat: inherit;
+	/*background-image: url('../img/grimReaper.jpg'); 
+	background-repeat: inherit;*/
 	font-family: 'Architects Daughter', cursive;
 }
 h1 {
 	text-align: center;
 	color: red;
-}
-.btn-primary {
-	background-color: green;
-	margin-left: 540px;
-	margin-top: 5px;
-	color: red;
-	padding-left: 40px;
-	padding-right: 50px;
-	
-}
-.form-name {
-	margin: auto;
-	width: 250px;
 }
 h2 {
 	margin-left: 200px;
