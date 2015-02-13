@@ -1,22 +1,30 @@
+// -----------------------------------
 // Query Params for API
 var page = 1, // random page selection
 	type = "people"; // need to verify props if changed
 
 
+// -----------------------------------
+// Fwd decl variables
 var playerName = "";
 
 
 
+// -----------------------------------
+// Create leaderboard
+generateLeaderboard();
+$('#formNotification').hide()
 
 
 
-
+// -----------------------------------
 // listen for #playerName edit
 $('#inputName').on('keyup', function(){
+	// hide notification
+	// $('#formNotification').hide()
+
 	// set playerName 
 	playerName = $(this).val()
-
-	console.log(playerName.substr(0, 3))
 
 	// check if it is more than 10
 	if (playerName.length > 10) {
@@ -25,15 +33,9 @@ $('#inputName').on('keyup', function(){
 	}
 		// trim white space
 		playerName = playerName.trim();
-
-
+		// to lower case
+		playerName = playerName.toLowerCase();
 })
-
-
-
-// gets elemtn
-
-
 
 
 // -----------------------------------
@@ -50,87 +52,65 @@ $('#play button').on('click', function(event){
 		$('#menu').hide();
 		$('#game').show();
 
+		// remove leaderboard
+		removeLeaderboard();
+
+		// show loader
+		$('#loading').show();
+
+		// hide 
+		$('#formNotification').hide()
+
 		// start game
 		getData(page, type);
-	
+		
 	} else {
 		// enter name
 		console.log("enter name, field is blank")
+
+		$('#formNotification').show()
+		// show error name
+
 	}
 
 })
 
 
+// listener for input submit
+$('#form-name').submit(function(event) {
+	// stop form from submitting
+	event.preventDefault();
+	// trigger play button click
+	$( '#play button' ).trigger( "click" );
+
+	// $('#formNotification').hide()
+})
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// -----------------------------------
-// create high scores
-// hold temp highscores
-var highscores = [
-	// 1st score
-	{
-		name: "Mike",
-		score: "1000"
-	},
-	{
-		name: "Tim",
-		score: "900"
-
-	},
-	{
-		name: "Danny",
-		score: "600"
-	},
-	{
-		name: "Derick",
-		score: "300"
-
-	},
-	{
-		name: "Bob",
-		score: "50"
-	},
-
-]
-
-
-// --------------------------------------------
-// Create html for highscores
-var $leaderboardObj = '';
-
-// loop through scores and create html for each score
-for (var i = 0; i < highscores.length; i++) {
-	$leaderboardObj += '<div class="row">';
-	$leaderboardObj += '<div class="col-sm-6">';
-	$leaderboardObj += '<h4>'+highscores[i].name+'</h4></div>';
-	$leaderboardObj += '<div class="col-sm-6">';
-	$leaderboardObj += '<h5>'+highscores[i].score+'</h5></div>';
-	$leaderboardObj += '</div>' // close row
+var updateLoader = function (){
+	var loadingText = $('#loading h1').text()
+	$('#loading h1').text(loadingText+'.');
 }
 
 
-// add html obj to #leaderboard
-$('#leaderboard').append($leaderboardObj)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

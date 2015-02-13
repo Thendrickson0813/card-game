@@ -1,31 +1,42 @@
-.page-header {
-	margin-top: 0;
-	/*height: 100px;*/
-	background-color: lightgrey;
-	h1 {
-		text-decoration: underline;
-		font-size: 3em;
-		padding: 22px 0;
-	}
-}
-
-
-#game {
-	display: none;
-}
-
-
 @font-face {
 	font-family:"Starjedi.ttf";
 	src: url("../fonts/Starjedi.ttf")
 }
 
 @font-face {
-	font-family:"Starhol.ttf";
+	font-family:"Starjhol.ttf";
 	src: url("../fonts/Starjhol.ttf")
 }
 
 
-h1 {
-	font-family: Starjedi;
+body {
+	background-color: $primary-color;
+	background: url(../img/starPattern.png);
+}
+
+.page-header {
+	margin-top: 0;	
+	border-bottom: none;
+	h1 {
+		color: $primary-text-color;
+		letter-spacing: 3px;
+		font-size: 3em;
+		padding: 22px 0;
+		font-family: Starjedi;
+
+	}
+}
+
+#game {
+	display: none;
+}
+
+
+
+
+
+#victoryScreen {
+	background-color: black;
+	height: 1000px;
+	width: 1000px;
 }

@@ -1,6 +1,12 @@
-//--------------------------------------------------------
+// --------------------------------------------
+//
+//	gameEngine.js
+//
+//
+// --------------------------------------------
 // Foward declared variables
-var score = 0,
+// --------------------------------------------
+var score = 250,
 	moves = 0,
 	fails = 0,
 	gameTime = 0,
@@ -15,6 +21,7 @@ var score = 0,
 
 // ---------------------------------------------------
 // Update moves
+// ---------------------------------------------------
 var gameUpdateMoves = function() {
 	// update moves
 	moves++;
@@ -27,9 +34,14 @@ var gameUpdateMoves = function() {
 
 // ----------------------------------------------------
 // Update fails
+// ---------------------------------------------------
 var gameUpdateFails = function() {
 	// update fails
 	fails++
+
+	// minus from score
+	score -= 50;
+	$('#score').text("Score: "+score);
 
 	// update html #fails text 
 	$('#fails').text("Fails: " + fails);
@@ -37,33 +49,72 @@ var gameUpdateFails = function() {
 
 
 
-
-
-
-
 // -----------------------------------------------------
 // Update Score
+// ---------------------------------------------------
 var gameUpdateScore = function (){
-	score++
-	
+	score+= 1000
+
 	// Update html #score element
 	$('#score').text("Score: "+score);
-
-	// console.log("Current Score: "+score);
 }
 
 
 // -----------------------------------------------------
 // End of Game Loop
+// ---------------------------------------------------
 var gameEnd = function(){
-	console.log("Congrats You Won!");
 	// stop game timer
 	clearTimeout(myTimer);
+
+	// reset loader
+	$('#loading h1').text("loading.");
+
+	// remove cards
+	$('#playingCards').remove();
+
+	// create victory html object
+	$victoryObject =  '<div id="victoryScreen">';
+	$victoryObject += '<h1>Congrats '+playerName+'<br>You Won!</h1>';
+	$victoryObject += '<p>We hope you had fun and play again soon</p>'
+	$victoryObject += '<button id="continue">continue</button>'	
+	$victoryObject += '</div>'
+
+	// add victory screen to body
+	$('body').append($victoryObject);	
+	
+	// listener for victory screen click
+	$('#victoryScreen button').on('click', function(event){
+		console.log("click")
+		// after game victory screen is displayed
+		// store highscores and show
+		addScore(score)
+		generateLeaderboard();
+
+		// return to menu
+		$('#menu').show();
+		$('#game').hide();
+
+		// remove victory screen
+		$('#victoryScreen').remove();
+
+		//reset game
+		score = 250;
+		moves = 0;
+		fails = 0;
+		gameTime = 0;
+		$("#timer").text("Time: "+gameTime);
+		$('#score').text("Score: "+score);
+		$("#moves").text("Moves: " + moves);
+		$('#fails').text("Fails: " + fails);
+	})
 }
+
 
 
 // -----------------------------------------------------
 // Game Timer
+// ---------------------------------------------------
 var gameTimerUpdate = function() {
 	myTimer = setTimeout(function() {
 		gameTime++;
@@ -79,6 +130,7 @@ var gameTimerUpdate = function() {
 
 // --------------------------------------------------------
 // Reorder array objects
+// ---------------------------------------------------
 var shuffleDeck = function(array) {
 	var currentIndex = array.length, temporaryValue, randomIndex ;
 
@@ -101,7 +153,11 @@ var shuffleDeck = function(array) {
 
 // -----------------------------------------------------
 // Set Up Game Cards
+// ---------------------------------------------------
 var gameInit = function(results) {
+
+	// hide loader
+	$('#loading').hide();
 
 	// Loop through each result and create a matching pair of cards
 	for (var i = 0; i < results.length; i++) {
@@ -127,18 +183,20 @@ var gameInit = function(results) {
 	shuffleDeck(cardDeck);
 
 	// start html
-	var $htmlObject = '<div class="container">';
-		$htmlObject += '<div class="row">';
+	var $htmlObject = '<div class="container" id="playingCards">';
+		$htmlObject += '<div class="row cardRow">';
 	
 	// create cards
 	for (var i = 0; i < 30; i++) {
 		col++ // increment column
+		// get first 3 letters of name for image path
+		var path = cardDeck[i].name.toLowerCase().substr(0, 3)
 
 		// add card back, with index as ID
-		$htmlObject += '<div class="col-sm-2""><div class="cardBack" id='+i+'>';
-		$htmlObject += '<h1>'+cardDeck[i].name+'</h1>';
-		$htmlObject += '<p>'+cardDeck[i].gender+'</p>';
-		$htmlObject += '<p>'+cardDeck[i].birthYear+'</p>';
+		$htmlObject += '<div class="col-sm-2""><div class="cardBack" id='+i;
+		$htmlObject += ' style="background: url(../img/'+path+'.png) center no-repeat;';
+		$htmlObject += 'background-size: cover;">'
+		$htmlObject += '<h1>'+cardDeck[i].name.toLowerCase()+'</h1>';
 		$htmlObject += '</div>';
 
 		// add card front
@@ -150,7 +208,7 @@ var gameInit = function(results) {
 			$htmlObject += '</div>'
 			// create new row
 			if (i <= cardDeck.length) {
-				$htmlObject += '<div class="row">';
+				$htmlObject += '<div class="row cardRow">';
 			}
 		}
 	}
@@ -182,12 +240,16 @@ var gameInit = function(results) {
 
 		// start game timer
 		gameTimerUpdate()
+
+
+		// gameEnd()
 }
 
 
 
 // -----------------------------------------------------
 // Main Game Loop
+// ---------------------------------------------------
 var gameMain = function(card) {
 	if (card) {
 		// check if card already flipped
@@ -198,14 +260,14 @@ var gameMain = function(card) {
 			// check for match
 			if (card.id === cardFlipped.id) {
 				// cards match, update score
-				console.log("Cards Match :)")
+				// console.log("Cards Match :)")
 				gameUpdateScore();
 
 				// reset card flipped
 				cardFlipped = false;
 
 				// check if end score reached
-				if (score < 15) {
+				if ((moves-fails) !== 15) {
 					// continue game
 					$activeCards = [];
 					gameMain();
@@ -217,7 +279,7 @@ var gameMain = function(card) {
 
 			} else {
 				// cards do not match
-				console.log("Cards Do Not Match :( ")
+				// console.log("Cards Do Not Match :( ")
 				
 				// updates fails
 				gameUpdateFails();
@@ -243,8 +305,14 @@ var gameMain = function(card) {
 
 	} else {
 		// idle state
-		console.log("Pick a card!")
+		// console.log("Pick a card!")
 		isTurn = true
 
 	}
 }
+
+
+
+
+// $htmlObject += '<p>'+cardDeck[i].gender+'</p>';
+// $htmlObject += '<p>'+cardDeck[i].birthYear+'</p>';

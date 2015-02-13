@@ -1,11 +1,22 @@
+// --------------------------------------------
+//
+//
+//	server.js
+//
+//
+//
+// --------------------------------------------
 // Ajax request for swapi.co api
+// --------------------------------------------
 var getData = function (page, type) {
 	page = Math.floor((Math.random() * page) + 1)
-
 
 	// ajax request
 	var req = new XMLHttpRequest();
 	req.onload = function(){
+			// we got results, show loading progress
+			updateLoader()
+
 			// parse data		
 			var data = JSON.parse(this.responseText);
 
@@ -24,6 +35,8 @@ var getData = function (page, type) {
 			// get 5 more star wars characters
 			var req = new XMLHttpRequest();
 			req.onload = function() {
+				// got second results, show loading progress
+
 				// parse data
 				var data = JSON.parse(this.responseText);
 				// console.log(data)
