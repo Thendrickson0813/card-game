@@ -1,6 +1,8 @@
 //--------------------------------------------------------
 // Foward declared variables
 var score = 0,
+	moves = 0,
+	fails = 0,
 	gameTime = 0,
 	myTimer,
 	cardFlipped = false, // first card flipped
@@ -10,10 +12,40 @@ var score = 0,
 	cardDeck = []; // change to obj?
 
 
+
+// ---------------------------------------------------
+// Update moves
+var gameUpdateMoves = function() {
+	// update moves
+	moves++;
+
+	// update html #moves text
+	$("#moves").text("Moves: " + moves);
+}
+
+
+
+// ----------------------------------------------------
+// Update fails
+var gameUpdateFails = function() {
+	// update fails
+	fails++
+
+	// update html #fails text 
+	$('#fails').text("Fails: " + fails);
+}
+
+
+
+
+
+
+
 // -----------------------------------------------------
 // Update Score
 var gameUpdateScore = function (){
 	score++
+	
 	// Update html #score element
 	$('#score').text("Score: "+score);
 
@@ -36,15 +68,12 @@ var gameTimerUpdate = function() {
 	myTimer = setTimeout(function() {
 		gameTime++;
 		gameTimerUpdate();
-		console.log(gameTime);
+		// console.log(gameTime);
 	}
 	, 1000);
 
-	// Update html #time element
+	// // Update html #time element
 	$("#timer").text("Time: "+gameTime);
-
-
-
 }
 
 
@@ -163,6 +192,9 @@ var gameMain = function(card) {
 	if (card) {
 		// check if card already flipped
 		if (cardFlipped) {
+			// two cards have now been flipped
+			gameUpdateMoves()
+
 			// check for match
 			if (card.id === cardFlipped.id) {
 				// cards match, update score
@@ -187,6 +219,9 @@ var gameMain = function(card) {
 				// cards do not match
 				console.log("Cards Do Not Match :( ")
 				
+				// updates fails
+				gameUpdateFails();
+
 				// reset card flipped
 				cardFlipped = false
 
@@ -207,8 +242,9 @@ var gameMain = function(card) {
 		}
 
 	} else {
-		// no card selected
+		// idle state
 		console.log("Pick a card!")
 		isTurn = true
+
 	}
 }
