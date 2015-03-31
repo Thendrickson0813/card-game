@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Card Game</title>
+    <title>Star Wars Card Game</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="http://fonts.googleapis.com/css?family=Architects+Daughter" rel="stylesheet" type='text/css' />
@@ -11,8 +11,6 @@
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" />
     <link rel="stylesheet" type="text/css" href="sass/main.css" />
-    <!-- <link rel="stylesheet" type="text/css" href="css/style.css" /> -->
-    <TITLE>Card Game Menu</TITLE>
 </head>
 
 
@@ -22,13 +20,12 @@
     <!-- ======================================================================= -->
     <div id="menu">
         <div class="page-header">
-            <h1>Card Game from Hell...</h1>
+            <h1>Card Game from Hell</h1>
         </div>
         <form id="form-name">
-
-            <input type="text" class="form-control" placeholder="Name" />
-
+            <input id="inputName" type="text" class="form-control" placeholder="Name"/>
         </form>
+        <div id="formNotification"><h6>enter name with 3 letters or more</h6></div>
         <div id="play">
             <button>Play</button>
             <!-- <a class="btn btn-primary btn-lg" href="#" role="button">PLAY</a> -->
@@ -36,137 +33,54 @@
         <div class="container" id="leaderboard">
             <h3>Top 5 Scores</h3>
             <div class="row">
-                <div class="col-sm-4">
-                    <h2>Username</h2>
+                <div class="col-sm-6">
+                    <h2>username</h2>
                 </div>
-                <div class="col-sm-8">
-                    <h2>Score</h2>
+                <div class="col-sm-6">
+                    <h2>score</h2>
                 </div>
             </div>
-            <!--         <hr />
- -->
-            <!-- Start of hiScore list -->
-            <div class="row">
-                <div class="col-sm-6">
-                    <h4>Mike Brash</h4>
-                </div>
-                <div class="col-sm-6">
-                    <h5>100025</h5>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-sm-6">
-                    <h4>Tim Hendrickson</h4>
-                </div>
-                <div class="col-sm-6">
-                    <h5>100025</h5>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-sm-6">
-                    <h4>Danny Josecite</h4>
-                </div>
-                <div class="col-sm-6">
-                    <h5>100025</h5>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-sm-6">
-                    <h4>Derick Warshaw</h4>
-                </div>
-                <div class="col-sm-6">
-                    <h5>100025</h5>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-sm-6">
-                    <h4>Mike Laplante</h4>
-                </div>
-                <div class="col-sm-6">
-                    <h5>100025</h5>
-                </div>
-            </div>
+ 
         </div>
-        <!--         <hr />
- -->
-       <!--  <footer>
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-12">
-                        <p>©All rights reserved 2015</p>
-                    </div>
-                </div>
-            </div>
-        </footer> -->
+
     </div>
 
     <!-- ======================================================================= -->
     <!-- game layer  -->
     <!-- ======================================================================= -->
-    <div id="gameLayer">
-        <div class="container playBoxContainer">
+    <div id="game">
+        <div class="container" id="gameHeader">
             <div class="row">
-                <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4"></div>
-                <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">
-                    <div class="playBox"></div>
+                <div class="col-sm-4">
+                    <h3 id="score">Score: 250</h3>
                 </div>
-                <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4"></div>
-            </div>
-        </div>
-
-
-        <div class="container boxContainer">
-            <div class="row">
-                <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2">
-                    <div class="cardBox"></div>
-                    <div class="cardBox"></div>
-                    <div class="cardBox"></div>
-                    <div class="cardBox"></div>
-                    <div class="cardBox"></div>
+                <div class="col-sm-4">
+                    <h3 id="timer">Time: 0</h3>
                 </div>
-                <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2">
-                    <div class="cardBox"></div>
-                    <div class="cardBox"></div>
-                    <div class="cardBox"></div>
-                    <div class="cardBox"></div>
-                    <div class="cardBox"></div>
-                </div>
-                <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2">
-                    <div class="cardBox"></div>
-                    <div class="cardBox"></div>
-                    <div class="cardBox"></div>
-                    <div class="cardBox"></div>
-                    <div class="cardBox"></div>
-                </div>
-                <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2">
-                    <div class="cardBox"></div>
-                    <div class="cardBox"></div>
-                    <div class="cardBox"></div>
-                    <div class="cardBox"></div>
-                    <div class="cardBox"></div>
-                </div>
-                <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2">
-                    <div class="cardBox"></div>
-                    <div class="cardBox"></div>
-                    <div class="cardBox"></div>
-                    <div class="cardBox"></div>
-                    <div class="cardBox"></div>
-                </div>
-                <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2">
-                    <div class="cardBox"></div>
-                    <div class="cardBox"></div>
-                    <div class="cardBox"></div>
-                    <div class="cardBox"></div>
-                    <div class="cardBox"></div>
-                </div>
+                <div class="col-sm-4">
+                    <ul>
+                        <li><h4 id="moves">Moves: 0</h4></li>
+                        <li><h4 id="fails">Fails: 0</h4></li>
+                    </ul>
+                </div>  
             </div>
         </div>
     </div>
+</div>
     <!-- end of gameLayer -->
+
+
+<div id="loading">
+    <img src="img/lightsaber.png">
+    <h1>loading.</h1>
+</div>
+
+    
 
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    <script src="js/highscore.js"></script>
     <script src="js/server.js"></script>
     <script src="js/gameEngine.js"></script>
     <script src="js/main.js"></script>
