@@ -57,6 +57,7 @@ var getData = function (page, type) {
 			req.open("GET", "http://swapi.co/api/"+type+"/?page="+2, true);
 			req.send();
 
+
 			
 		}
 

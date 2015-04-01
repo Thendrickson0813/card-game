@@ -194,7 +194,7 @@ var gameInit = function(results) {
 
 		// add card back, with index as ID
 		$htmlObject += '<div class="col-sm-2""><div class="cardBack" id='+i;
-		$htmlObject += ' style="background: url(/img/'+path+'.png) center no-repeat;';
+		$htmlObject += ' style="background: url(img/'+path+'.png) center no-repeat;';
 		$htmlObject += 'background-size: cover;">'
 		$htmlObject += '<h1>'+cardDeck[i].name.toLowerCase()+'</h1>';
 		$htmlObject += '</div>';
