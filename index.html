@@ -11,8 +11,23 @@
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" />
     <link rel="stylesheet" type="text/css" href="sass/main.css" />
-</head>
+    <script>
+    (function(i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function() {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
 
+    ga('create', 'UA-60707136-3', 'auto');
+    ga('send', 'pageview');
+    </script>
+</head>
 
 <body>
     <!-- ======================================================================= -->
@@ -23,9 +38,10 @@
             <h1>Card Game from Hell</h1>
         </div>
         <form id="form-name">
-            <input id="inputName" type="text" class="form-control" placeholder="Name"/>
+            <input id="inputName" type="text" class="form-control" placeholder="Name" />
         </form>
-        <div id="formNotification"><h6>enter name with 3 letters or more</h6></div>
+        <div id="formNotification">
+            <h6>enter name with 3 letters or more</h6></div>
         <div id="play">
             <button>Play</button>
             <!-- <a class="btn btn-primary btn-lg" href="#" role="button">PLAY</a> -->
@@ -40,11 +56,8 @@
                     <h2>score</h2>
                 </div>
             </div>
- 
         </div>
-
     </div>
-
     <!-- ======================================================================= -->
     <!-- game layer  -->
     <!-- ======================================================================= -->
@@ -59,25 +72,21 @@
                 </div>
                 <div class="col-sm-4">
                     <ul>
-                        <li><h4 id="moves">Moves: 0</h4></li>
-                        <li><h4 id="fails">Fails: 0</h4></li>
+                        <li>
+                            <h4 id="moves">Moves: 0</h4></li>
+                        <li>
+                            <h4 id="fails">Fails: 0</h4></li>
                     </ul>
-                </div>  
+                </div>
             </div>
         </div>
     </div>
-</div>
+    </div>
     <!-- end of gameLayer -->
-
-
-<div id="loading">
-    <img src="img/lightsaber.png">
-    <h1>loading.</h1>
-</div>
-
-    
-
-
+    <div id="loading">
+        <img src="img/lightsaber.png">
+        <h1>loading.</h1>
+    </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
     <script src="js/highscore.js"></script>
