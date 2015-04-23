@@ -25,7 +25,7 @@ var getData = function (page, type) {
 			var results = [];
 
 			// create array to hold data
-			for (var i = 0; i < data.results.length; i++){
+			for (var i = 0; i < 8; i++){
 				results[i] = [];
 				results[i].name = data.results[i].name;
 				results[i].birthYear = data.results[i].birth_year;
@@ -33,29 +33,29 @@ var getData = function (page, type) {
 			}
 			
 			// get 5 more star wars characters
-			var req = new XMLHttpRequest();
-			req.onload = function() {
-				// got second results, show loading progress
+			// var req = new XMLHttpRequest();
+			// req.onload = function() {
+			// 	// got second results, show loading progress
 
-				// parse data
-				var data = JSON.parse(this.responseText);
-				// console.log(data)
+			// 	// parse data
+			// 	var data = JSON.parse(this.responseText);
+			// 	// console.log(data)
 
-				// add data to results array
-				for (var i = 0; i < 5; i++){
-					results[results.length] = [];
-					results[results.length-1].name = data.results[i].name;
-					results[results.length-1].birthYear = data.results[i].birth_year;
-					results[results.length-1].gender = data.results[i].gender;
-				}
+			// 	// add data to results array
+			// 	for (var i = 0; i < 5; i++){
+			// 		results[results.length] = [];
+			// 		results[results.length-1].name = data.results[i].name;
+			// 		results[results.length-1].birthYear = data.results[i].birth_year;
+			// 		results[results.length-1].gender = data.results[i].gender;
+			// 	}
 
 			// start game
 			gameInit(results);		
 
-			}
+			// }
 
-			req.open("GET", "http://swapi.co/api/"+type+"/?page="+2, true);
-			req.send();
+			// req.open("GET", "http://swapi.co/api/"+type+"/?page="+2, true);
+			// req.send();
 
 
 			

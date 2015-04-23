@@ -170,7 +170,7 @@ var gameInit = function(results) {
 					 }
 
 		// create matching card
-		cardDeck[i+15] = {
+		cardDeck[i+8] = {
 							name : results[i].name, 
 					   		id : (i+1),
 					   		gender : results[i].gender,
@@ -184,16 +184,16 @@ var gameInit = function(results) {
 
 	// start html
 	var $htmlObject = '<div class="container" id="playingCards">';
-		$htmlObject += '<div class="row cardRow">';
+		$htmlObject += '<div class="row cardRow no-pad">';
 	
 	// create cards
-	for (var i = 0; i < 30; i++) {
+	for (var i = 0; i < 16; i++) {
 		col++ // increment column
 		// get first 3 letters of name for image path
 		var path = cardDeck[i].name.toLowerCase().substr(0, 3)
 
 		// add card back, with index as ID
-		$htmlObject += '<div class="col-sm-2""><div class="cardBack" id='+i;
+		$htmlObject += '<div class="col-xs-2""><div class="cardBack" id='+i;
 		$htmlObject += ' style="background: url(img/'+path+'.png) center no-repeat;';
 		$htmlObject += 'background-size: cover;">'
 		$htmlObject += '<h1>'+cardDeck[i].name.toLowerCase()+'</h1>';
@@ -203,12 +203,12 @@ var gameInit = function(results) {
 		$htmlObject += '<div class="cardFront" id='+i+'></div></div>';
 
 		// close row
-		if ((col % 6) == 0 ) {
+		if ((col % 4) == 0 ) {
 			// close row
 			$htmlObject += '</div>'
 			// create new row
 			if (i <= cardDeck.length) {
-				$htmlObject += '<div class="row cardRow">';
+				$htmlObject += '<div class="row cardRow no-pad">';
 			}
 		}
 	}
@@ -267,7 +267,7 @@ var gameMain = function(card) {
 				cardFlipped = false;
 
 				// check if end score reached
-				if ((moves-fails) !== 15) {
+				if ((moves-fails) !== 8) {
 					// continue game
 					$activeCards = [];
 					gameMain();
